@@ -9,6 +9,10 @@
     ng-controller="BoardCtrl">
     <aside>
       <div class="settings">
+        <h2>Spelare</h2>
+
+        <span>{{nickname}}</span>
+
         <h2>Inställningar</h2>
 
         <label for="player">Ändra vems tur det är</label>
@@ -17,6 +21,23 @@
         </button>
 
         <button ng-click="restart();">Starta ny omgång</button>
+
+        <h2>Logg</h2>
+
+        <ul>
+          <li ng-repeat="message in messages">
+            <strong>{{message.time | date: 'HH:mm:ss'}}</strong><br/>
+            <span>{{message.text}}</span>
+          </li>
+        </ul>
+
+        <h2>Användare</h2>
+
+        <ul>
+          <li ng-repeat="user in users">
+            <strong>{{user.nickname}}</strong><br/>
+          </li>
+        </ul>
       </div>
     </aside>
 
@@ -50,12 +71,18 @@
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script>
+      var hostname = window.location.hostname;
+      document.write('<script src="' + window.location.protocol + '//' +
+                     hostname + ':8088/socket.io/socket.io.js"><\/script>');
+    </script>
     <script src="lib/player.js"></script>
     <script src="lib/check.js"></script>
     <script src="lib/tile.js"></script>
     <script src="lib/board.js"></script>
     <script src="lib/game.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/socket.js"></script>
     <script src="scripts/controllers.js"></script>
   </body>
 </html>
