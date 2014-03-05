@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="media" href="styles/main.css"/>
+  </head>
+
+  <body ng-app="othello" class="with-sidebar"
+    ng-controller="BoardCtrl">
+    <aside>
+      <div class="settings">
+        <h2>Inställningar</h2>
+
+        <label for="player">Ändra vems tur det är</label>
+        <button ng-click="game.board.switchTurn()">
+          Ändra till {{game.board.opponent.color | translate}}
+        </button>
+
+        <button ng-click="restart();">Starta ny omgång</button>
+      </div>
+    </aside>
+
+    <header>
+      <div class="avatar white"
+        ng-show="game.board.player.color == 'white'">
+      </div>
+      <div class="avatar black"
+        ng-show="game.board.player.color == 'black'">
+      </div>
+      Det är {{game.board.player.color | translate}} spelares tur
+    </header>
+
+    <div class="board"
+      ng-class="{white:game.board.player.color=='white', black:game.board.player.color=='black', handicap:game.board.player.handicap}">
+      <div class="dot left top"></div>
+      <div class="dot right top"></div>
+      <div class="dot left bottom"></div>
+      <div class="dot right bottom"></div>
+      <div ng-repeat="row in game.board.rows" class="row">
+        <div ng-repeat="cell in row" class="cell"
+             ng-click="game.clickCell(cell)"
+             ng-class="{hilight:cell.hilight}"
+             ng-mouseover="game.hoverCell(cell)">
+          <div class="coin"
+            ng-class="{white:cell.state=='white', black:cell.state=='black'}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="lib/player.js"></script>
+    <script src="lib/check.js"></script>
+    <script src="lib/tile.js"></script>
+    <script src="lib/board.js"></script>
+    <script src="lib/game.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+  </body>
+</html>

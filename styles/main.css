@@ -1,0 +1,131 @@
+/* Layout */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Sidebar */
+body {
+  margin-left: 64px;
+  background: #AF8;
+}
+body.with-sidebar {
+  margin-left: 192px;
+}
+body > aside {
+  position: absolute;
+  left: 0;
+  width: 64px;
+  height: 100%;
+}
+body.with-sidebar > aside {
+  width: 192px;
+}
+
+/* Settings */
+.settings h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  font-family: Sans-Serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: darkgreen;
+}
+
+/* Header */
+body > header {
+  overflow: hidden;
+}
+
+/* Avatar */
+.avatar {
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border: 4px solid #91D874;
+}
+.avatar.white {
+  background: white;
+}
+.avatar.black {
+  background: black;
+}
+
+/* Board */
+.board {
+  position: relative;
+  width: 576px;
+  padding: 3px;
+  background: #176917;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.cell {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin: 3px;
+  padding: 3px;
+  background: forestgreen;
+}
+
+.handicap.white .hilight .coin {
+  background: #78BB78;
+}
+
+.handicap.white .hilight .coin.black {
+  background: #176917;
+}
+
+.handicap.black .hilight .coin {
+  background: #176917;
+}
+
+.handicap .hilight .coin.white {
+  background: #3BA83B;
+  box-shadow: none;
+}
+
+.hilight .coin.black {
+  background: #176917;
+}
+
+.coin {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.coin.white {
+  background: white;
+  box-shadow: 1px 1px 0 black;
+}
+
+.coin.black {
+  background: black;
+}
+
+/* Dots */
+.board .dot {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: #00300D;
+  border-radius: 100%;
+}
+.board .dot.top {
+  top: 141px;
+}
+.board .dot.left {
+  left: 141px;
+}
+.board .dot.bottom {
+  bottom: 141px;
+}
+.board .dot.right {
+  right: 141px;
+}
