@@ -1,0 +1,15 @@
+{
+  "name": "othello-client",
+  "version": "0.0.0",
+  "description": "Othello client with JavaScript and Angular.js",
+  "main": "index.html",
+  "scripts": {
+    "test": "jasmine-node spec --autotest --watch lib",
+    "start": "http-server"
+  },
+  "author": "Albert Arvidsson",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "~>0.6.1"
+  }
+}
