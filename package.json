@@ -4,12 +4,13 @@
   "description": "Othello client with JavaScript and Angular.js",
   "main": "index.html",
   "scripts": {
-    "test": "jasmine-node spec --autotest --watch lib",
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec --autotest --watch lib",
     "start": "http-server"
   },
   "author": "Albert Arvidsson",
   "license": "MIT",
   "devDependencies": {
+    "jasmine-node": "~1.13.1",
     "http-server": "~>0.6.1"
   }
 }
